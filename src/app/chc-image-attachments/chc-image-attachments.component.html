@@ -1,0 +1,21 @@
+<div class="content container">
+  <div class="row justify-content-xs-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-start">
+    <div class="card col-md-8 ">
+      <div class="card-body card-padding">
+          <form [formGroup]="imageUploadForm" (ngSubmit)="onSubmit()">
+            <h3 class="card-body__title" for="password">Narrative:</h3>
+            <div class="form-group">
+              <input type="text" formControlName="narrative" placeholder="Add a narrative" class="form-control">
+              <p *ngIf="imageUploadForm.controls.narrative.errors">Narrative field is required!</p>
+
+              <!-- <i class="form-group__bar"></i> -->
+            </div>
+            <image-upload url="http://localhost:8888/testAttachment" [max]="2" [extensions]="['jpeg','png']"></image-upload>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
